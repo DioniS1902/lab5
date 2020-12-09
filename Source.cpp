@@ -1,15 +1,11 @@
 #include "Header.h"
-#include <string>
-#include <iostream>
-
-using namespace std;
 
 int main() {
-	string first, second;
+	string nameOfFirstFighter, nameOfSecondFighter;
 	cout << "Enter the name of the first fighter : ";
-	cin >> first;
+	cin >> nameOfFirstFighter;
 	cout << "Enter the name of the second fighter : ";
-	cin >> second;
-	Fight Fight(first, second);
+	cin >> nameOfSecondFighter;
+	Fight Fight(nameOfFirstFighter, nameOfSecondFighter);
 	return 0;
 }
