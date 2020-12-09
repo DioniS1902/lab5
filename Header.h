@@ -40,26 +40,26 @@ private:
 class Fight
 {
 public:
-	Fight(string first, string second) {
+	Fight(string firstFighterName, string secondFighterName) {
 		srand(time(NULL));
-		int health_one = rand() % 100 + 50, damagePerAttack_one = rand() % 10 + 10;
-		Fighter one(first, health_one, damagePerAttack_one);
+		int firstFighterHealth = rand() % 100 + 50, firstFighterDamagePerAttack = rand() % 10 + 10;
+		Fighter firstFighter(firstFighterName, firstFighterHealth, firstFighterDamagePerAttack);
 
-		int health_two = rand() % 100 + 50, damagePerAttack_two = rand() % 10 + 10;
-		Fighter two(second, health_two, damagePerAttack_two);
-		fight(one, two);
+		int secondFighterHealth = rand() % 100 + 50, secondFighterDamagePerAttack = rand() % 10 + 10;
+		Fighter secondFighter(secondFighterName, secondFighterHealth, secondFighterDamagePerAttack);
+		fight(firstFighter, secondFighter);
 	}
 
 	~Fight() {}
 
 private:
-	void fight(Fighter& one, Fighter& two) {
-		one.coutInfo();
-		two.coutInfo();
+	void fight(Fighter& firstFighter, Fighter& secondFighter) {
+		firstFighter.coutInfo();
+		secondFighter.coutInfo();
 		while (true)
 		{
-			if (one.isDamageGive(two) == false) { one.win(); break; }
-			if (two.isDamageGive(one) == false) { two.win();  break; }
+			if (firstFighter.isDamageGive(secondFighter) == false) { firstFighter.win(); break; }
+			if (secondFighter.isDamageGive(firstFighter) == false) { secondFighter.win();  break; }
 		}
 	}
 };
